@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Tokens GRANDLY (mismos que la web) ── */
+:root {
+  --navy:  #101F5C;
+  --blue:  #1D3FAE;
+  --cream: #F8F1E2;
+  --paper: #FFFDF7;
+  --red:   #E5392B;
+  --yel:   #F7C531;
+  --pink:  #F4B9C2;
+  --sky:   #BBD3F5;
+  --ink:   #1E2747;
+  --grey:  #4A5272;
+  --line:  #D9D2BF;
+}
+
+body {
+  background-color: #F8F1E2;
+  font-family: 'Figtree', system-ui, sans-serif;
+  color: #1E2747;
+  /* Textura papel — igual que grandly.es */
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' seed='1' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.4 0 0 0 0 0.35 0 0 0 0 0.2 0 0 0 0.04 0'/></filter><rect width='160' height='160' filter='url(%23n)'/></svg>");
+}
+
+/* Rayas de toldo — igual que grandly.es */
+.stripe-bar {
+  background: repeating-linear-gradient(
+    -45deg,
+    #E5392B 0 10px, #FFFDF7 10px 20px,
+    #1D3FAE 20px 30px, #FFFDF7 30px 40px
+  );
+}
+
+/* Sombras offset planas — igual que las tarjetas de grandly.es */
+.shadow-yel  { box-shadow: 6px 6px 0 #F7C531; }
+.shadow-sky  { box-shadow: 6px 6px 0 #BBD3F5; }
+.shadow-pink { box-shadow: 6px 6px 0 #F4B9C2; }
+
+/* Inputs */
+.inp {
+  width: 100%;
+  padding: .625rem .875rem;
+  font-family: 'Figtree', system-ui, sans-serif;
+  font-size: .875rem;
+  color: #1E2747;
+  background: #FFFDF7;
+  border: 2px solid #101F5C;
+  border-radius: 8px;
+  outline: none;
+  transition: box-shadow .15s;
+}
+.inp:focus { box-shadow: 3px 3px 0 #F7C531; }
+.inp::placeholder { color: #9CA3AF; }
+
+/* Botones — píldoras igual que grandly.es */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  min-height: 2.75rem;
+  padding: 0 1.4rem;
+  font-family: 'Jost', system-ui, sans-serif;
+  font-weight: 600;
+  font-size: .82rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  border: 2px solid #101F5C;
+  background: transparent;
+  color: #101F5C;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background .15s, color .15s;
+  white-space: nowrap;
+}
+.btn:hover { background: #101F5C; color: #F8F1E2; }
+.btn-p { background: #1D3FAE; border-color: #1D3FAE; color: #fff; }
+.btn-p:hover { background: #101F5C; border-color: #101F5C; }
+.btn-y { background: #F7C531; border-color: #F7C531; color: #101F5C; }
+.btn-y:hover { background: #F8F1E2; border-color: #101F5C; }
+.btn:disabled { opacity: .5; cursor: not-allowed; }
+
+/* Eyebrow — igual que grandly.es */
+.eyebrow {
+  font-family: 'Jost', system-ui, sans-serif;
+  font-weight: 600;
+  font-size: .78rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: #1D3FAE;
+  display: flex;
+  align-items: center;
+  gap: .625rem;
+  margin-bottom: .5rem;
+}
+.eyebrow::after {
+  content: '';
+  display: block;
+  width: 1.5rem;
+  height: 2px;
+  background: #1D3FAE;
+  flex-shrink: 0;
+}
+
+/* Badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  font-family: 'Jost', system-ui, sans-serif;
+  font-weight: 700;
+  font-size: .68rem;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  padding: 2px 9px;
+  border-radius: 999px;
+  border: 1.5px solid;
+  white-space: nowrap;
+}
